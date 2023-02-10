@@ -107,21 +107,28 @@
 //     console.log(mucThue2)
 // }
 // Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
-let money = 1000
-let thang = 5
-let laiSuatThang6 = money * 0.05 * thang
-let laiSuatThang12 = laiSuatThang6 * money  * 0.1 * (thang - 6)
-console.log(laiSuatThang12)
-let laiSuatThang18 = money * 0.2 * thang
-let laiSuatThang24 = money * 0.3 * thang
-if (thang <= 6) {
-    console.log(laiSuatThang6)
-} else if(thang <= 12) {
-    console.log(laiSuatThang12)
-}else if(thang <= 18) {
-    console.log(laiSuatThang18)
-}else if(thang <= 24) {
-    console.log(laiSuatThang24)
-} else {
-    console('k cho vay leu leu')
-}
+// Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+// let money = 1000
+// let thang = 5
+// let laiSuatThang6 = money *  thang * 0.05
+// let laiSuatThang12 = money * 0.05 + (thang - 6) * 0.05 *money
+// // console.log(laiSuatThang12)
+// let laiSuatThang18 =   (money * 0.05) + ((thang - 6) *0.1 *money) + (thang - 12) * 0.2 *money
+// // console.log(laiSuatThang18)
+// let laiSuatThang24 =  (money * 0.05) + ((thang - 6) *0.1 *money) + ((thang - 12) * 0.2 *money) +  ((thang - 16) * 0.5 *money)
+// // console.log(laiSuatThang24)
+// if (thang <= 6) {
+//     console.log(laiSuatThang6)
+// } else if(thang <= 12) {
+//     console.log(laiSuatThang12)
+// }else if(thang <= 18) {
+//     console.log(laiSuatThang18)
+// }else if(thang <= 24) {
+//     console.log(laiSuatThang24)
+// } else {
+//     console('k cho vay leu leu')
+// }
+// let money = 1000
+// let laiSuat = 1
+// let thangVay = 24
+// let tong = money * laiSuat * thangVay / 100
