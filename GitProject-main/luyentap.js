@@ -38,9 +38,9 @@ var ba = 3
  }
 // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
 var kiemTra = 70
-var giuaki = 50
+var giuaKi = 50
 var cuoiKi = 80
-let tongdiem = (kiemTra + giuaki + cuoiKi)/3
+let tongdiem = (kiemTra + giuaKi + cuoiKi)/3
 if (tongdiem > 80) {
     console.log('học sinh gioi ')
 } else if (tongdiem > 60) {
