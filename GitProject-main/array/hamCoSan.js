@@ -123,13 +123,56 @@
 // console.log('tổng số nguyên âm'+ total)
 
 // Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
-    let number = [-1,2,4,-5,7,-7,-1000,-200,0,-5,6]
-    let input = window.prompt()
-    for(let i = 0; i < number.length; i++){
-        if (number[i] == input){
-            alert("V is in the array")
-            break;
-        }
-        }
+ // Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+//     let number = [-1,2,4,-5,7,-7,-1000,-200,0,-5,6]
+//     let input = window.prompt()
+//     let count = 0;
+//     for(let i = 0; i < number.length; i++) {
+//         if (number[i] == input) {
+//             count = 1;
+//             alert("V is in the array")
+//             break;
+//         }
+//         if (count == 0) {
+//             console.log(" V is not in Array")
+//         }
+//     }
 
-alert('do khung')
+// bài 7
+
+// let number = [1,2,39,12,42,5,6,3,28,50];
+// let input = +prompt("Nhap so nguyen muon so sanh");
+// let result = [];
+//
+// for ( let i=0; i < number.length; i++){
+//     if ( input == number[i]){
+//
+//          number.push(0);
+//         continue;
+//     } else {
+//         result = number[i];
+//     }
+//
+//     document.write(result + ",");
+// }
+
+// bài 8
+// let arr=[1,-42,54,6,5,8,123,55,99,60];
+// for (let j=0; j< 10; j++){
+//     for(let i=j+1;i<10;i++){
+//         if(arr[i]>arr[j]){
+//             let number=arr[j];
+//             arr[j]= arr[i];
+//             arr[i]= number;
+//         }
+//     }
+// }
+// document.write("mang da sap xep la: " + arr );
+
+// bài 9
+// let arrA = [12,23,2,33,7,54,10,8,57,34];
+// let arrB = [98, 17, 62, 19, 99, 22, 82, 28, 9, 10];
+// let arrC = [];
+//
+// arrC.push(...arrB);
+// arrC.push(...arrA);
