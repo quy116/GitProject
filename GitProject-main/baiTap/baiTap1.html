@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt('nhap do dai');
+    let result = [];
+    let tong = 0;
+    for (let i = 0; i < input; i++) {
+        let element = parseInt(prompt('nhap phan tu vao'));
+        result.push(element);
+    }
+    for (let j = 0; j <= result.length;j++){
+        if(j % 2 !== 0) {
+            if (result[j] % 2 === 0) {
+                tong += result[j];
+            }
+        }
+    }
+    console.log(result);
+    console.log(tong);
+
+</script>
+
+</body>
+</html>

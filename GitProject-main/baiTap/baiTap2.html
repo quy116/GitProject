@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt('nhap do dai');
+    let result = [];
+    let soChan = 0;
+    let soLe = 0;
+    for (let i = 0; i < input; i++) {
+        let element = parseInt(prompt('nhap phan tu vao'));
+        result.push(element);
+    }
+    for(let j = 0; j < result.length; j++){
+        if (result[j] % 2 === 0){
+            soChan++;
+            console.log(soChan)
+        } else{
+            soLe++;
+            console.log(soLe)
+        }
+    }
+    if (soLe === soChan) {
+        alert('OK')
+    } else {
+        alert('No')
+    }
+</script>
+
+</body>
+</html>
