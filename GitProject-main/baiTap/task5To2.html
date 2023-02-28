@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function check(number) {
+    if (number<2){
+      return false;
+    }
+    for (let i = 2; i <number ; i++) {
+      if (number%i===0){
+        return false;
+      }
+    }
+    return true;
+  }document.write("Các số nguyên tố trong mảng 2 chiều là:")
+  function lietKe(arr){
+    let count=0;
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[i].length; j++) {
+        if(check(arr[i][j])=== true){
+          count++;
+          document.write(" "+arr[i][j]);
+        }
+      }
+    }
+    document.write("<br>");
+    document.write("Số nguyên tố có trong mảng đó là:"+count);
+  }
+  let arr=[[]];
+  let m=+prompt("Nhập độ dài hàng m");
+  let n=+prompt("Nhập độ dài cột n");
+  for (let i = 0; i < n; i++) {
+    arr[i] = [];
+    for (let j = 0; j < m; j++) {
+      arr[i][j] = +prompt("Nhập phần tử hàng" + i + "cột" + j);
+    }
+  }
+  lietKe(arr);
+</script>
+</body>
+</html>
