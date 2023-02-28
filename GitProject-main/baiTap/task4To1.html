@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C0123G1-Phan Vũ An Khang</title>
+</head>
+<body>
+<script>
+    function chuanHoa(string) {
+        let str=string.split(" ");
+        let kq="";
+        for (let i = 0; i <str.length ; i++) {
+            let temp= str[i].toLowerCase();
+            if (temp!==" "){
+                temp=temp.slice(0,1).toUpperCase()+temp.slice(1);
+                kq+=temp+" ";
+            }
+        }
+        return kq;
+    }
+    function demTu() {
+        let nhapTu=str.split(" ");
+        let max=nhapTu[0];
+        for (let i = 0; i <nhapTu.length ; i++) {
+            if (nhapTu[i].length>max.length){
+                max=nhapTu[i];
+            }
+        }
+        return max;
+    }
+    let str=prompt("Nhập vào chuỗi bất kỳ.");
+    document.write("Trước khi chuẩn hóa là:"+str+"<br>");
+    let chuan=chuanHoa(str);
+    document.write("Sau khi chuẩn hóa là:"+chuan+"<br>");
+    let max=demTu(str);
+    document.write("Từ dài nhất trong xâu là:"+max);
+
+</script>
+</body>
+</html>
