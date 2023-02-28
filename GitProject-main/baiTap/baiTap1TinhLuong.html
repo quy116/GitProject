@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt('nhap luong bạn vao');
+    let luong;
+    if (input >= 15){
+        luong =  input * (100 - 20) / 100;
+        alert(luong)
+        alert('thue bang 20%')
+    } else if (input >= 7) {
+        luong =  input * (100 - 10) / 100;
+        alert(luong)
+        alert('thue bang 10%')
+    } else if(input < 7) {
+        luong =  input * (100 - 5) / 100;
+        alert(luong)
+        alert('thue bang 5%')
+    }
+</script>
+
+</body>
+</html>
