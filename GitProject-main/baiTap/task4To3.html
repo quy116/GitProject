@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  let s1 = "aabcc";
+  let s2 = "adcaa";
+  let s3 = [];
+  let arr = s1.split("");
+  let arr2 = [];
+  let flag = true;
+  for (let i = 0; i < s2.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (s2[i].includes(arr[j])) {
+        s3.push(s2[i]);
+        arr.splice(j, 1);
+        break;
+      }
+    }
+  }
+  document.write("commonCharacterCount(s1, s2) =" + s3 + "<br>");
+  for (let i = 0; i < s3.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (s3[i] === arr2[j]) {
+        flag = false;
+      }
+    }
+    if (flag) {
+      arr2.push(s3[i]);
+    }
+  }
+  document.write("2 xâu s1 và s2 có" + " " + s3.length + " " + "kí tự chung là:" + "<br>");
+  for (let i = 0; i < arr2.length; i++) {
+    let count = 0;
+    for (let j = 0; j < s3.length; j++) {
+      if (arr2[i] === s3[j]) {
+        count++;
+      }
+    }
+    document.write(+count + " " + "ký tự" + " " + arr2[i] + "<br>");
+  }
+</script>
+</body>
+</html>

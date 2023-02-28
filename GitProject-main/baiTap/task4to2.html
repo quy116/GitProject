@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+</head>
+<body>
+<script>
+  let arr=prompt("Nhập xâu ký tự.");
+  let arr1=[];
+  for (let i = 0; i <arr.length ; i++) {
+    if (!arr1.includes(arr[i])) {
+      arr1.push(arr[i]);
+    }
+  }
+  document.write("differentSymbolsNaive(s)="+arr1.length+"<br>");
+  document.write("Có"+" "+arr1.length+" "+"ký tự khác nhau là:"+arr1);
+</script>
+</body>
+</html>
