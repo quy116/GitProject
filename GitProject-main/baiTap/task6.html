@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="font-size: 20px; display: flex; justify-content: space-between">
+    <div><img src="baiTap/meoGym.jpeg" style="height: 100px"></div>
+    <div>hệ thống CodeGym</div>
+    <div>language</div>
+    <div style="width: 200px"><input placeholder="tìm kiếm" style="width: 300px; height: 20px; border-radius: 20px">
+    </div>
+    <div> thông báo</div>
+</div>
+<form>
+    <h2 style="color: dodgerblue">Biểu mẫu thêm - sửa học sinh</h2>
+    <label for="nameStudent">Tên học sinh: </label>
+    <input type="text" placeholder="Nhập tên học sinh" id="nameStudent" maxlength="50">
+    <label for="genderStudent">Giới tính</label>
+    <select name="gender" id="genderStudent">
+        <option>Nam</option>
+        <option>Nữ</option>
+    </select>
+    <label for="gmail">Tên học sinh: </label>
+    <input type="text" placeholder="Nhập gmail học sinh" id="gmail">
+    <br>
+    <br>
+    <label for="classes">Lớp</label>
+    <input type="text" placeholder="Nhập lớp" id="classes">
+    <label for="birthday">Ngày sinh</label>
+    <input type="date" id="birthday">
+    <button type="button" onclick="createStudent()">Thêm mới</button>
+    <button type="button" onclick="saveUpdate()">sửa</button>
+</form>
+<div style="display: flex; justify-content: center; margin-top: 30px">
+    <div id="tableStudentList" style="text-align: center"></div>
+</div>
+
+<script>
+    class StudentCG {
+        constructor(studentName, classes, gmail, dateOfBirth, gender) {
+            this.studentName = studentName;
+            this.classes = classes;
+            this.gmail = gmail;
+            this.dateOfBirth = dateOfBirth;
+            this.gender = gender;
+        }
+    }
+
+    let studentName1 = new StudentCG("Nguyen Viet Cao", "C0123G1", 'nguyenphucquy1106@gmail.com', "1988", "nam");
+    let studentName2 = new StudentCG("Nguyen Viet Cao", "C0123G1", 'nguyenphucquy1106@gmail.com', "1988", "nam");
+    let studentName3 = new StudentCG("Nguyen Viet Cao", "C0123G1", 'nguyenphucquy1106@gmail.com', "1988", "nam");
+
+    let studentList = [];
+    studentList.push(studentName1, studentName3, studentName2);
+    displayStudentList(studentList);
+
+    function displayStudentList(studentList) {
+        let table = "<table border='1' style='border-collapse: collapse'>";
+        table += "<tr>" +
+            "<th>STT</th>" +
+            "<th>Tên</th>" +
+            "<th>Giới tính</th>" +
+            "<th>gmail</th>" +
+            "<th>Năm sinh</th>" +
+            "<th>Lớp</th>" +
+
+            "<th colspan='2'>Thao tác</th>" +
+            " </tr>";
+        for (let i = 0; i < studentList.length; i++) {
+            table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + studentList[i].studentName + "</td>" +
+                "<td>" + studentList[i].gender + "</td>" +
+                "<td>" + studentList[i].gmail + "</td>" +
+                "<td>" + studentList[i].dateOfBirth + "</td>" +
+                "<td>" + studentList[i].classes + "</td>" +
+                "<td><button onclick=\"deleteSutudentList(" + i + ")\">Xoá</button></td>" +
+                "<td><button onclick=\"updateStudent(" + i + ")\">Sửa</button></td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("tableStudentList").innerHTML = table;
+    }
+
+    function deleteSutudentList(indexStudent) {
+        let confirmDelete = confirm('ban muon xoa ' +
+            studentList[indexStudent].studentName + ' ko?');
+        if (confirmDelete) {
+            studentList.splice(indexStudent, 1);
+            alert("Bạn đã xoá thành công.");
+            displayStudentList(studentList);
+        } else {
+            alert("Bạn đã không xoá.");
+        }
+    }
+
+    function createStudent() {
+        let name = document.getElementById("nameStudent").value;
+        let gender = document.getElementById("genderStudent").value;
+        let classes = document.getElementById("classes").value;
+        let birthday = document.getElementById("birthday").value;
+        let gmail = document.getElementById('gmail').value;
+        let newStudent = new StudentCG(name, gender, gmail, birthday, classes,);
+        studentList.push(newStudent);
+        displayStudentList(studentList);
+        document.getElementById("nameStudent").value = "";
+        document.getElementById("genderStudent").value = "";
+        document.getElementById("classes").value = "";
+        document.getElementById("birthday").value = "";
+        document.getElementById('gmail').value = "";
+    }
+    let luuTru ;
+    function updateStudent(indexStudent) {
+        alert('ban muon thay doi?' + studentList[indexStudent].studentName)
+        let updateStudent = studentList[indexStudent];
+        document.getElementById('nameStudent').value = updateStudent.studentName;
+        document.getElementById('genderStudent').value = updateStudent.gender;
+        document.getElementById('classes').value = updateStudent.classes;
+        document.getElementById('birthday').value = updateStudent.birthday;
+        document.getElementById('gmail').value = updateStudent.gmail;
+        studentList[indexStudent].studentName = document.getElementById('nameStudent').value;
+        studentList[indexStudent].gender = document.getElementById('genderStudent').value;
+        studentList[indexStudent].classes = document.getElementById('classes').value;
+        studentList[indexStudent].birthday = document.getElementById('birthday').value;
+        studentList[indexStudent].gmail = document.getElementById('gmail').value;
+        displayStudentList(studentList)
+        luuTru = studentList[indexStudent];
+    }
+    function saveUpdate() {
+        let name = document.getElementById("nameStudent").value;
+        let gender = document.getElementById("genderStudent").value;
+        let classes = document.getElementById("classes").value;
+        let birthday = document.getElementById("birthday").value;
+        let gmail = document.getElementById('gmail').value;
+        luuTru.studentName = name;
+        luuTru.gender = gender;
+        luuTru.classes = classes;
+        luuTru.birthday = birthday ;
+        luuTru.gmail = gmail;
+        document.getElementById("nameStudent").value = "";
+        document.getElementById("genderStudent").value = "";
+        document.getElementById("classes").value = "";
+        document.getElementById("birthday").value = "";
+        document.getElementById('gmail').value = "";
+        // displayStudentList(studentList);
+    }
+</script>
+
+</body>
+</html>
